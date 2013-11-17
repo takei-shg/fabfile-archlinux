@@ -13,7 +13,7 @@ def rails():
 @task
 def all():
     '''
-# all
+# ruby.all
 base()
 rails()
     '''

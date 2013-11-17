@@ -11,7 +11,7 @@ def cabal():
 @task
 def all():
     '''
-# all
+# haskell.all
 ghc()
 cabal()
     '''

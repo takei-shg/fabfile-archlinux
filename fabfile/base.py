@@ -16,7 +16,7 @@ def dotfiles():
 @task
 def all():
     '''
-# all
+# base.all
 package()
 dotfiles()
     '''
