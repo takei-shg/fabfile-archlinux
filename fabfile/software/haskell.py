@@ -1,5 +1,7 @@
 from fabric.api import task, sudo
 
+install_dir = '/home/vagrant/local'
+
 @task
 def ghc():
     sudo('pacman -Sy --noconfirm ghc')
@@ -8,13 +10,13 @@ def ghc():
 def cabal():
     sudo('pacman -Sy --noconfirm cabal-install')
     sudo('cabal update')
-    sudo('cabal install cabal-install -j4 --prefix=/usr')
+    sudo('cabal install cabal-install -j4 --prefix=%s' % install_dir)
 
 @task
 def dev_tools():
     sudo('pacman -Sy --noconfirm happy')
     sudo('cabal update')
-    sudo('cabal install haskell-src-exts ghc-mod stylish-haskell doctest -j4 --prefix=/usr')
+    sudo('cabal install haskell-src-exts ghc-mod stylish-haskell doctest -j4 --prefix=%s' % install_dir)
 
 @task
 def all():
